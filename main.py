@@ -70,6 +70,7 @@ with tab2:
     df = df.dropna(subset=["latitude", "longitude"])
     df['datetime'] = pd.to_datetime(df['datetime'], errors='coerce')
     df.dropna(subset=['datetime'], inplace=True)
+    df.reset_index(drop=True, inplace=True)
 
     col1, col2, col3 = st.columns(3)
 
